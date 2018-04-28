@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)&& !TextUtils.isEmpty(confirm_pass)){
                     if (pass.equals(confirm_pass)){
                         reg_progress.setVisibility(View.VISIBLE);
-                        mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
